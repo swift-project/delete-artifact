@@ -12,11 +12,11 @@
     "delete-artifact",
     "artifact"
   ],
-  "author": "GeekyEggo",
+  "author": "swift-project",
   "license": "MIT",
   "repository": {
     "type" : "git",
-    "url" : "https://github.com/geekyeggo/delete-artifact"
+    "url" : "https://github.com/swift-project/delete-artifact"
   },
   "dependencies": {
     "@actions/core": "^1.2.3",
