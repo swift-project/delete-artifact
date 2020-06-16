@@ -53,7 +53,10 @@ async function run() {
                 success = false;
             }
         } else {
-            core.warning(`Unable to delete artifact "${name}"; the artifact was not found.`);
+            const warn = core.getInput('warnIfNotFound');
+            if (warn.toLowerCase() === 'true' || warn === '1') {
+                core.warning(`Unable to delete artifact "${name}"; the artifact was not found.`);
+            }
         }
     }
 

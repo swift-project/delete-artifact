@@ -8,6 +8,10 @@ inputs:
     description: Indicates whether the action should fail upon encountering an error.
     required: false
     default: true
+  warnIfNotFound:
+    description: Indicates whether the action should warn if the artifact is not found.
+    required: false
+    default: true
 runs:
   using: node12
   main: ./dist/index.js

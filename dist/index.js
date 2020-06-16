@@ -1040,7 +1040,10 @@ async function run() {
                 success = false;
             }
         } else {
-            Object(core.warning)(`Unable to delete artifact "${name}"; the artifact was not found.`);
+            const warn = Object(core.getInput)('warnIfNotFound');
+            if (warn.toLowerCase() === 'true' || warn === '1') {
+                Object(core.warning)(`Unable to delete artifact "${name}"; the artifact was not found.`);
+            }
         }
     }
 
