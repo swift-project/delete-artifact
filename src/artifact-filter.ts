@@ -19,7 +19,7 @@ function getExactMatchFilter(names: string[]): Filter {
             const artifact = artifacts.find((a) => a.name == name);
             if (artifact != null) {
                 yield artifact;
-            } else {
+            } else if (getInputBoolean("warnIfNotFound")) {
                 core.warning(
                     `Unable to delete artifact "${name}"; the artifact was not found.`
                 );

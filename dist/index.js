@@ -29320,7 +29320,7 @@ function getExactMatchFilter(names) {
             if (artifact != null) {
                 yield artifact;
             }
-            else {
+            else if (getInputBoolean("warnIfNotFound")) {
                 core.warning(`Unable to delete artifact "${name}"; the artifact was not found.`);
             }
         }
